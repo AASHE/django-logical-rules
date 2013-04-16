@@ -14,7 +14,11 @@ setup(name='django-logical-rules',
       url='https://bitbucket.org/aashe/django-logical-rules',
       license='LICENSE',
       long_description=read("README.rst"),
-      packages=['logical_rules'],
+      packages=[
+        'logical_rules',
+        'logical_rules.templatetags',
+        'logical_rules.tests',
+        ],
       install_requires=[
               "Django >= 1.3",
               'setuptools'
