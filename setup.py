@@ -12,9 +12,13 @@ setup(name='django-logical-rules',
       author='Benjamin Stookey',
       author_email='ben@aashe.org',
       url='https://bitbucket.org/aashe/django-logical-rules',
+      license='LICENSE',
       long_description=read("README.md"),
       packages=['logical_rules'],
-      install_requires=['setuptools'],
+      install_requires=[
+              "Django >= 1.3",
+              'setuptools'
+              ],
       classifiers=[
               'Development Status :: 4 - Beta',
               'Environment :: Web Environment',
