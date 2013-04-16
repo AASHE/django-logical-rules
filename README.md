@@ -91,8 +91,8 @@ Finally, we've added two commonly used rules. As an optional substitute for `log
 Contributing
 ------------
 
-Think this needs something else? To contribute to `django-logical-rules` create a fork on [bitbucket](bitbucket). Clone your fork, make some changes, and submit a pull request.
+Think this needs something else? To contribute to `django-logical-rules` create a fork on [bitbucket][bitbucket]. Clone your fork, make some changes, and submit a pull request.
 
-Bugs are great contributions too! Feel free to add an issue on [bitbucket](bitbucket):
+Bugs are great contributions too! Feel free to add an issue on [bitbucket][bitbucket]:
 
 [bitbucket]: https://bitbucket.org/aashe/django-logical-rules  "django-logical-rules on Bitbucket"
