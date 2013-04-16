@@ -32,11 +32,11 @@ Rules are defined in **rules.py** files within your apps. Here's an example of a
 	import logical_rules
 
 	def user_can_edit_mymodel(mymodel, user):
-	    """
+		"""
 			Confirms a user can edit a specific model
 			...owners only!
-	    """
-	    return mymodel.owner == user
+		"""
+		return mymodel.owner == user
 	logical_rules.site.register("user_can_edit_mymodel", user_can_edit_mymodel)
 	
 To include your models in the registry you will need to do run the autodiscover, a bit like django.contrib.admin (I generally put this in **urls.py**)::
@@ -70,10 +70,10 @@ If you are extending Django's class-based generic views, you might find this mix
 		def update_logical_rules(self):
 			super(MyView, self).update_logical_rules()
 			self.add_logical_rule({
-									'name': 'user_can_edit_mymodel',
-									'param_callbacks':
-										[('get_request_user', 'get_object')],
-                            })
+				'name': 'user_can_edit_mymodel',
+				'param_callbacks':
+					[('get_request_user', 'get_object')],
+			})
 
 ``param_callbacks`` are our technique for getting the parameters for your rule. These are assumed to be methods on your class. ``get_request_user()`` is defined in RuleMixin since it's so common. ``get_object()`` is a method on the DetailView class.
 
