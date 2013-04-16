@@ -4,4 +4,4 @@ dist
 MANIFEST
 _build
 _static
-
+*.egg-info
