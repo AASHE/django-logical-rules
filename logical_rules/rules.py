@@ -12,14 +12,14 @@ class CanMakePizza(object):
         return True
 
 can_make_pizza = CanMakePizza
-rules.register(can_make_pizza)
+rules.register('can_make_pizza', can_make_pizza)
     
 def can_eat_pizza(person, topping_list):
     for t in topping_list:
         if t in person.dislike_list:
             return False
     return True
-rules.register(can_eat_pizza)
+rules.register('can_eat_pizza', can_eat_pizza)
 
 """
 import logical_rules
