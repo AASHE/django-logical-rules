@@ -65,17 +65,17 @@ RulesMixin
 
 If you are extending Django's class-based generic views, you might find this mixin useful. It allows you to define rules that should be applied before rendering a view. Here's an example usage::
 
-	class MyView(RulesMixin, DetailView):
+   class MyView(RulesMixin, DetailView):
 
-		def update_logical_rules(self):
-			super(MyView, self).update_logical_rules()
-			self.add_logical_rule({
-				'name': 'user_can_edit_mymodel',
-				'param_callbacks': [
+      def update_logical_rules(self):
+         super(MyView, self).update_logical_rules()
+         self.add_logical_rule({
+            'name': 'user_can_edit_mymodel',
+            'param_callbacks': [
                ('object', 'get_object'),
                ('user', 'get_request_user')
             ]
-			})
+         })
 
 ``param_callbacks`` are our technique for getting the parameters for your rule. These are assumed to be methods on your class. ``get_request_user()`` is defined in RuleMixin since it's so common. ``get_object()`` is a method on the DetailView class.
 
