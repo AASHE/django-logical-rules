@@ -7,7 +7,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name='django-logical-rules',
-      version='0.1',
+      version='0.1.1',
       description='A rule engine for Django apps.',
       author='Benjamin Stookey',
       author_email='ben@aashe.org',
