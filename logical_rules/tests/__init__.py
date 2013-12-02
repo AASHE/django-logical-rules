@@ -1,8 +1,10 @@
 from logical_rules.tests.test_app.models import *
-from register import RulesTest
-from template_tags import TemplateTagTest
+from testRegister import RulesTest
+from testTags import TemplateTagTest
+from testMixin import MixinTest
 
 __test__ = {
     'RulesTest': RulesTest,
-    'TemplateTagTest': TemplateTagTest
+    'TemplateTagTest': TemplateTagTest,
+    'MixinTest': MixinTest
 }
