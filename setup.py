@@ -7,7 +7,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name='django-logical-rules',
-      version='0.1.1',
+      version='1.0',
       description='A rule engine for Django apps.',
       author='Benjamin Stookey',
       author_email='ben@aashe.org',
@@ -18,10 +18,10 @@ setup(name='django-logical-rules',
         'logical_rules',
         'logical_rules.templatetags',
         'logical_rules.tests',
+        'logical_rules.tests.test_app',
         ],
       install_requires=[
-              "Django >= 1.3",
-              'setuptools'
+              "Django >= 1.4",
               ],
       classifiers=[
               'Development Status :: 4 - Beta',
