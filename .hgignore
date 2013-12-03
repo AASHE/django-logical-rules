@@ -7,3 +7,4 @@ _static
 *.egg-info
 .pydevproject
 .project
+build
