@@ -11,6 +11,8 @@ django-logical-rules
 
 A tool to manage logical rules throughout your application. Logical rules are more powerful than permission or rule tables because they are written in python and can use complex logic. Register a rule once and work with it throughout your app, from templates to generic view mixins. Instead of cluttering your models with rule-style and permission-style methods define those rules in **rules.py** and then get easy access to them in your views and templates.
 
+Detailed documentation available at ReadTheDocs_.
+
 Installation
 ============
 
@@ -111,6 +113,8 @@ Think this needs something else? To contribute to ``django-logical-rules`` creat
 Bugs are great contributions too! Feel free to add an issue on Bitbucket_:
 
 .. _Bitbucket: https://bitbucket.org/aashe/django-logical-rules 
+
+.. _ReadTheDocs: http://django-logical-rules.readthedocs.org/en/latest/index.html
 
 .. _DjangoMessaging: https://docs.djangoproject.com/en/dev/ref/contrib/messages/
 
