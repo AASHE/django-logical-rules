@@ -29,7 +29,7 @@ Add ``logical_rules`` to your settings.py file::
 Additional Requirements
 =======================
 
-If you want to use the messaging features install `Django messages framework`__.
+If you want to use the messaging features, install `Django messages framework`__.
 
 Configuration
 =============
