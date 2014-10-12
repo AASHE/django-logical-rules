@@ -47,7 +47,19 @@ Rules are defined in **rules.py** files within your apps. Here's an example of a
 		"""
 		return object.owner == user
 	logical_rules.site.register("user_can_edit_mymodel", user_can_edit_mymodel)
-	
+
+Alternatively, you can use the ``register_rule`` decorator::
+
+	from logical_rules.decorators import register_rule
+
+    @register_rule()
+	def user_can_edit_mymodel(object, user):
+		"""
+			Confirms a user can edit a specific model
+			...owners only!
+		"""
+		return object.owner == user
+
 To include your models in the registry you will need to do run the autodiscover, a bit like django.contrib.admin (I generally put this in **urls.py**)::
 
 	import logical_rules
