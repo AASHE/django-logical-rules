@@ -13,7 +13,7 @@ class CanMakePizza(object):
 
 can_make_pizza = CanMakePizza
 rules.register('can_make_pizza', can_make_pizza)
-    
+
 def can_eat_pizza(person, topping_list):
     for t in topping_list:
         if t in person.dislike_list:
@@ -24,9 +24,13 @@ rules.register('can_eat_pizza', can_eat_pizza)
 """
 import logical_rules
 
+
 def evaluate_expression(exp):
     return exp
+
+
 logical_rules.site.register('evaluate_expression', evaluate_expression)
+
 
 def user_is_authenticated(user):
     """
@@ -34,4 +38,6 @@ def user_is_authenticated(user):
         login_required decorator
     """
     return user.is_authenticated()
+
+
 logical_rules.site.register('user_is_authenticated', user_is_authenticated)

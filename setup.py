@@ -21,7 +21,7 @@ setup(name='django-logical-rules',
         'logical_rules.tests.test_app',
         ],
       install_requires=[
-              "Django >= 1.4",
+              "Django >= 1.9",
               ],
       classifiers=[
               'Development Status :: 4 - Beta',

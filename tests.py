@@ -13,6 +13,7 @@ def main():
     sys.exc_clear()
 
     os.environ["DJANGO_SETTINGS_MODULE"] = "django.conf.global_settings"
+
     from django.conf import global_settings
 
     global_settings.INSTALLED_APPS = (
@@ -38,7 +39,7 @@ def main():
         global_settings.DATABASE_NAME = ":memory:"
 
     global_settings.ROOT_URLCONF = 'logical_rules.tests.test_app.urls'
-    
+
     global_settings.MIDDLEWARE_CLASSES = (
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,16 +50,17 @@ def main():
 
     global_settings.SECRET_KEY = "blahblah"
     global_settings.DEBUG = True
-    global_settings.TEMPLATE_DUBUG = True
+    global_settings.TEMPLATE_DEBUG = True
+    global_settings.SECRET_KEY = "guesswho"
+
+    django.setup()
 
     from django.test.utils import get_runner
     test_runner = get_runner(global_settings)
-    
-    if django.VERSION > (1,2):
-        test_runner = test_runner()
-        failures = test_runner.run_tests(['logical_rules',])
-    else:
-        failures = test_runner(['logical_rules',], verbosity=2)
+
+    test_runner = test_runner()
+    failures = test_runner.run_tests(['logical_rules',])
+
     sys.exit(failures)
 
 if __name__ == '__main__':

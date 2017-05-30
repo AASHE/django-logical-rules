@@ -1,9 +1,9 @@
-import sys
+import imp
+from importlib import import_module
+from django.conf import settings
+
 
 def import_rules(app):
-    from django.utils.importlib import import_module
-    import imp
-    import sys
 
     try:
         app_path = import_module(app).__path__
@@ -18,8 +18,8 @@ def import_rules(app):
     module = import_module('%s.rules' % app)
     return module
 
+
 def autodiscover():
-    from django.conf import settings
 
     for app in settings.INSTALLED_APPS:
         import_rules(app)
