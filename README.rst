@@ -78,7 +78,7 @@ Once you have created a rule, it's easy to use anywhere in your templates::
 	{% testrule user_can_edit_mymodel object request.user %}
 		<p>You are the owner!</p>
 	{% endtestrule %}
-	
+
 **Note:** *Don't use quotes around the rule name in the template.*
 
 RulesMixin
@@ -120,11 +120,11 @@ Direct Calling
 Contributing
 ============
 
-Think this needs something else? To contribute to ``django-logical-rules`` create a fork on Bitbucket_. Clone your fork, make some changes, and submit a pull request.
+Think this needs something else? To contribute to ``django-logical-rules`` create a fork on Github_. Clone your fork, make some changes, and submit a pull request.
 
-Bugs are great contributions too! Feel free to add an issue on Bitbucket_:
+Bugs are great contributions too! Feel free to add an issue on Github_:
 
-.. _Bitbucket: https://bitbucket.org/aashe/django-logical-rules 
+.. _Github: https://github.com/AASHE/django-logical-rules
 
 .. _ReadTheDocs: http://django-logical-rules.readthedocs.org/en/latest/index.html
 
