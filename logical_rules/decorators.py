@@ -1,4 +1,4 @@
-import logical_rules
+import .logical_rules
 
 
 def register_rule(rule_name=None):

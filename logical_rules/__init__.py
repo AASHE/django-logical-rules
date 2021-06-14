@@ -1,4 +1,4 @@
-from register import RuleRegistry
-from helpers import autodiscover
+from .register import RuleRegistry
+from .helpers import autodiscover
 
 site = RuleRegistry()

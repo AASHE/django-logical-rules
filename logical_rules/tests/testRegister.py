@@ -5,7 +5,7 @@
 
 from django.test import TestCase
 
-import logical_rules
+import ..logical_rules
 
 class RulesTest(TestCase):
     def setUp(self):
