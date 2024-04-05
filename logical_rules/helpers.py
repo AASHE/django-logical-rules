@@ -1,4 +1,4 @@
-import imp
+import importlib
 from importlib import import_module
 from django.conf import settings
 
@@ -11,7 +11,7 @@ def import_rules(app):
         return None
 
     try:
-        imp.find_module('rules', app_path)
+        importlib.util.find_spec('rules', app_path)
     except ImportError:
         return None
 
