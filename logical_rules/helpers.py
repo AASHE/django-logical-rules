@@ -14,6 +14,7 @@ def import_rules(app):
         module_spec = importlib.util.find_spec('rules', app_path)
         module = importlib.util.module_from_spec(module_spec)
         module_spec.loader.exec_module(module)
+        sys.modules['rules'] = module
     except (ImportError, AttributeError):
         return None
 
