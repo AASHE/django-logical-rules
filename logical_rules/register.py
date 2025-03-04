@@ -38,6 +38,6 @@ class RuleRegistry(object):
         except KeyError:
             raise NotRegistered("Rule %s has not been registered" % rule_name)
 
-    def test_rule(self, rule_name, *args):
+    def test_rule(self, rule_name, user_profile, *args):
         rule = self.get_rule(rule_name)
-        return rule(*args)
+        return rule(user_profile, *args)

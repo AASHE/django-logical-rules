@@ -100,8 +100,9 @@ class RulesMixin(object):
             arg = getattr(self, v)
             args.append(arg())
 
+        user_profile = self.get_user_profile()
         # run rule
-        if not logical_rules.site.test_rule(rule['name'], *args):
+        if not logical_rules.site.test_rule(rule['name'], user_profile, *args):
             if 'redirect_url' in rule.keys():
                 return HttpResponseRedirect(rule['redirect_url'])
             if 'response_callback' in rule.keys():
@@ -121,3 +122,9 @@ class RulesMixin(object):
             A quick helper function to make self.request.user available as a callback
         """
         return self.request.user
+
+    def get_user_profile(self):
+        """
+            Helper to get user_profile from session
+        """
+        return self.request.session.get('user_profile', None)

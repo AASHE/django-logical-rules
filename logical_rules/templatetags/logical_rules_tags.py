@@ -24,12 +24,13 @@ class RuleTestNode(template.Node):
         self.nodelist_true, self.nodelist_false = nodelist_true, nodelist_false
 
     def render(self, context):
+        user_profile = context.get('user_profile', None)
         evaluated_params = []
         for p in self.params:
             v = template.Variable(p).resolve(context)
             evaluated_params.append(v)
         # @todo catch an exception here and just treat as false if rule is missing
-        if logical_rules.site.test_rule(self.rule_name, *evaluated_params):
+        if logical_rules.site.test_rule(self.rule_name, user_profile, *evaluated_params):
             return self.nodelist_true.render(context)
         return self.nodelist_false.render(context)
         #return "Rule: %s %s" % (self.rule_name, self.params)
